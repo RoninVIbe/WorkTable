@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Документы{% endblock %}
+{% block content %}
+<h2>Документы</h2>
+<ul class="list-group">
+    {% for document in documents %}
+    <li class="list-group-item">
+        <strong>{{ document.title }}</strong>
+        <br><small>{{ document.uploaded_at }}</small><br>
+        
+        <!-- Кнопка для скачивания -->
+        <a href="{% url 'download_document' document.id %}" class="btn btn-outline-primary btn-sm mt-2">
+            Скачать файл
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

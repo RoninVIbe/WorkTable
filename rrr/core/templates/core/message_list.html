@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Сообщения{% endblock %}
+{% block content %}
+<h2>Сообщения</h2>
+<ul class="list-group">
+    {% for message in messages %}
+    <li class="list-group-item">
+        <strong>От:</strong> {{ message.sender }}<br>
+        <strong>Кому:</strong> {{ message.recipient }}<br>
+        {{ message.content }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
